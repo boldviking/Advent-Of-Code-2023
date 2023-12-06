@@ -25,13 +25,13 @@ with open("input.txt", "r") as f:
     # the distance traveled will result in a standard curve.
     # something like this
     # 0                  | looser
-    # 1                  | looser
-    # 2 <-- minimum time | winners
-    # 4                  | winners
+    # 4                  | looser
+    # 6 <-- minimum time | winners
     # 8                  | winners
-    # 4                  | winners
-    # 2 <-- maximum time | winners
-    # 1                  | looser
+    # 9                  | winners
+    # 8                  | winners
+    # 6 <-- maximum time | winners
+    # 4                  | looser
     # as such we only need to calculate the minimum time
     # and reapply this from the other side.
     # 
