@@ -2,6 +2,11 @@ import sys
 import time
 import math
 
+# Still a number crunching sollution. Though this time we go backwards.
+# We are basically hash guessing. Starting from 0 and incrementing by one
+# every loop we traverse the transformations in reverse until a result
+# is part of the initial seed set.
+
 with open("input.txt", "r") as f:
     start = time.time()
     result = sys.maxsize

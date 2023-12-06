@@ -4,6 +4,14 @@ import math
 
 # using the sollution from part 1 is not recommended xD. This works in due time ... say
 # is that the heat death of the universe over there?
+#
+# Ok this was just too much fun. I let this little process run while I was working on
+# an actual better solution. I got to a better, not the best, solution after about 30 minutes.
+# Nevertheless this bad boy was running for about 18 hours and came to the correct result xD.
+# Love it xD.
+
+# There is a bug in the log output. It prints out the previous result, not the current found
+# result. The correct result was found in set 5, about 7 hours back xD.
 
 with open("input.txt", "r") as f:
     result = sys.maxsize
