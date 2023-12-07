@@ -105,13 +105,11 @@ with open("input.txt", "r") as f:
     data.sort(key=lambda x: x[0])
 
     rank = 0
-    prev = None
     sum = 0
 
     for hand in data:
         rank += 1
 
-        prev = hand
         sum += hand[1] * rank
 
     print(sum)

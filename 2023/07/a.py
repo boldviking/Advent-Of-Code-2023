@@ -88,17 +88,13 @@ with open("input.txt", "r") as f:
     data.sort(key=lambda x: x[0])
 
     rank = 0
-    prev = None
     sum = 0
 
     for hand in data:
         rank += 1
 
-        prev = hand
-        print("{} += {} * {}".format(sum, hand[1], rank))
+        #print("{} += {} * {}".format(sum, hand[1], rank))
         sum += hand[1] * rank
-
-    print(data[0])
 
     print(sum)
 
