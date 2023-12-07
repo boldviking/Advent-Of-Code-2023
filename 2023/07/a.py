@@ -84,7 +84,9 @@ with open("input.txt", "r") as f:
         set.append(int(dataline[1]))
         data.append(set)
 
-
+    # python sorted too good, sorted them
+    # by their bid as well which resulted 
+    # in unstable hand sorting :D
     data.sort(key=lambda x: x[0])
 
     rank = 0
