@@ -1,12 +1,25 @@
 import math
 
+# We basically need to check for every value that is in
+# hemming range 1 once. So we just use xor to see how
+# many bits are different. Then count those bits
+# if it is more than 1 it is wrong.
+# if it exactly one we apply the smudge once
+# if it is 0 and we have used smudge it is correct.
+
 def checkPalindrom(line):
-    print(line)
+    # print(line)
+    smudge = False
     for i in range(math.floor(len(line)/2)):
-        if line[i] != line[-i - 1]:
+        comp = line[i] ^ line[-i - 1]
+        distance = bin(comp).count("1")
+        if distance >= 2:
             return False
-    print("True")
-    return True
+        elif distance >= 1 and not smudge:
+            smudge = True
+        elif distance >=1 and smudge:
+            return False
+    return True and smudge
 
 def checkForAnyPalindrom(line):
     i = 2
@@ -73,22 +86,26 @@ for d in data:
 
     output = 0
 
-    print("answer", x, y)
 
-    if x > y:
+    # add wacky not want to deal with proper logic
+    # way of ignoring wrong results :D
+    if x < 0:
+        x = 50000
+
+    if y < 0:
+        y = 50000
+
+    if x < y:
         output += x * 100
     else:
         output += y
+
+    print("answer", x, y)
 
     print(output)
     sum += output
 
 print(math.floor(sum))
 
-#19766.0 too low ...
-#68203.0 too high ...
-#63252.0 too high ...
-#45170 incorrect
-#44938 incorrect
-#45074 incorrect
-#42974 correct
+# 19120 too low
+# 27587 correct
